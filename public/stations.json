@@ -1,0 +1,254 @@
+{
+  "categories": [
+    {
+      "name": "Lofi",
+      "stations": [
+        {
+          "name": "Lofi Girl",
+          "picture": "lofi-girl.jpg",
+          "videoId": "jfKfPfyJRdk"
+        },
+        {
+          "name": "Chillhop Music",
+          "picture": "chillhop-music.jpg",
+          "videoId": "7NOSDKb0HlU"
+        },
+        {
+          "name": "STEEZYASFUCK",
+          "picture": "STEEZYASFUCK.jpg",
+          "videoId": "lP26UCnoH9s"
+        },
+        {
+          "name": "the bootleg boy 2",
+          "picture": "the-bootleg-boy-2.jpg",
+          "videoId": "HBPtQVzRZUY"
+        }
+      ]
+    },
+    {
+      "name": "Jazz",
+      "stations": [
+        {
+          "name": "Cafe Music BGM",
+          "picture": "Cafe-Music-BGM.jpg",
+          "videoId": "Dx5qFachd3A"
+        },
+        {
+          "name": "Cozy Coffee Shop",
+          "picture": "Cozy-Coffee-Shop.jpg",
+          "videoId": "JJq34sWY4GY"
+        },
+        {
+          "name": "Piano Jazz Music",
+          "picture": "Piano-Jazz-Music.jpg",
+          "videoId": "xl0NMRAnqbA"
+        },
+        {
+          "name": "BGM channel",
+          "picture": "BGM-channel.jpg",
+          "videoId": "xl0NMRAnqbA"
+        }
+      ]
+    },
+    {
+      "name": "Rap/Hip Hop",
+      "stations": [
+        {
+          "name": "UPROXX Music",
+          "picture": "UPROXX-Music.jpg",
+          "videoId": "05689ErDUdM"
+        },
+        {
+          "name": "Best of Mix",
+          "picture": "Best-of-Mix.jpg",
+          "videoId": "N6ORdxoJH2Q"
+        },
+        {
+          "name": "Rap Mafia",
+          "picture": "Rap-Mafia.jpg",
+          "videoId": "0MOkLkTP-Jk"
+        },
+        {
+          "name": "Matthew Chávez",
+          "picture": "Matthew-Chávez.jpg",
+          "videoId": "86XzuPmMriw"
+        }
+      ]
+    },
+    {
+      "name": "Nature",
+      "stations": [
+        {
+          "name": "Rain",
+          "picture": "Rain-Sounds.jpg",
+          "videoId": "V2Id31mrKVU"
+        },
+        {
+          "name": "Forest",
+          "picture": "Forest.jpg",
+          "videoId": "CRo2j7UmUvs"
+        },
+        {
+          "name": "Fireplace",
+          "picture": "Fireplace.jpg",
+          "videoId": "vHOv3sJWkUs"
+        },
+        {
+          "name": "Ocean Waves",
+          "picture": "Ocean-Waves.jpg",
+          "videoId": "gf6SK0NObfI"
+        }
+      ]
+    },
+    {
+      "name": "Synthwave",
+      "stations": [
+        {
+          "name": "Synthwave-lofi",
+          "picture": "synthwave-lofi.png",
+          "videoId": "4xDzrJKXOOY"
+        },
+        {
+          "name": "Nightride FM",
+          "picture": "Nightride-FM.jpg",
+          "videoId": "UedTcufyrHc"
+        },
+        {
+          "name": "The Prime Thanatos",
+          "picture": "ThePrimeThanatos.jpg",
+          "videoId": "q-I_K2YQLy8"
+        },
+        {
+          "name": "TOKYO TONES",
+          "picture": "TOKYO-TONES.jpg",
+          "videoId": "KNJyQwgzrMg"
+        }
+      ]
+    },
+    {
+      "name": "House",
+      "stations": [
+        {
+          "name": "Deep House Radio",
+          "picture": "depp-house-radio.jpg",
+          "videoId": "UedTcufyrHc"
+        },
+        {
+          "name": "Tropical House Radio",
+          "picture": "tropical.jpg",
+          "videoId": "hIf_x11fRxE"
+        },
+        {
+          "name": "Tomorrowland Radio",
+          "picture": "Tomorrowland.jpg",
+          "videoId": "wBgSH-CGPzg"
+        },
+        {
+          "name": "Toolroom Live",
+          "picture": "Toolroom-Records.jpg",
+          "videoId": "JOXRElW1LCA"
+        }
+      ]
+    },
+    {
+      "name": "Meditation",
+      "stations": [
+        {
+          "name": "YellowBrickCinema",
+          "picture": "YellowBrickCinema.jpg",
+          "videoId": "KIk20JaidTs"
+        },
+        {
+          "name": "Healing Energy for Soul",
+          "picture": "Healing-Energy-for-Soul.jpg",
+          "videoId": "u3papaX85MA"
+        },
+        {
+          "name": "Open Heart Music",
+          "picture": "Open-Heart-Music.jpg",
+          "videoId": "3JllA-gub5Q"
+        },
+        {
+          "name": "OM Chanting 432 Hz",
+          "picture": "OM-Chanting.jpg",
+          "videoId": "KRrLjn4S7mc"
+        }
+      ]
+    },
+    {
+      "name": "Drum & Bass",
+      "stations": [
+        {
+          "name": "Hospital Records",
+          "picture": "Hospital-Records.jpg",
+          "videoId": "8z1tLBynk7U"
+        },
+        {
+          "name": "DnBRadio Atmospheric",
+          "picture": "DnBRadio-Atmospheric.jpg",
+          "videoId": "V1eqPTRAW6s"
+        },
+        {
+          "name": "GravityGroovy",
+          "picture": "GravityGroovy.jpg",
+          "videoId": "XmAHwvGy35k"
+        },
+        {
+          "name": "chao's_aether",
+          "picture": "chaos-aether.jpg",
+          "videoId": "IxFi0g7pLTg"
+        }
+      ]
+    },
+    {
+      "name": "Techno",
+      "stations": [
+        {
+          "name": "Art of Minimal Techno",
+          "picture": "Art-of-Minimal.jpg",
+          "videoId": "c6i70DSxhOo"
+        },
+        {
+          "name": "Minimal Group",
+          "picture": "Minimal-Group.jpg",
+          "videoId": "34H1XIjnfKM"
+        },
+        {
+          "name": "Dark Monkey Music",
+          "picture": "Dark-Monkey-Music.jpg",
+          "videoId": "1T2H1poqiW4"
+        },
+        {
+          "name": "Trippy Cat Music",
+          "picture": "chaos-aether.jpg",
+          "videoId": "sQpeIw3HFq8"
+        }
+      ]
+    },
+    {
+      "name": "Reggaeton",
+      "stations": [
+        {
+          "name": "Fiesta Latina Mix",
+          "picture": "Fiesta-Latina-Mix.jpg",
+          "videoId": "8wNpMhXnYPk"
+        },
+        {
+          "name": "REGGAETON VIEJO",
+          "picture": "REGGAETON-VIEJO.jpg",
+          "videoId": "wq0DdaFSq8A"
+        },
+        {
+          "name": "Pop Latino",
+          "picture": "Pop-Latino.jpg",
+          "videoId": "7zjHH7AGngQ"
+        },
+        {
+          "name": "Fiesta Latina Mix 2",
+          "picture": "Fiesta-Latina-Mix2.jpg",
+          "videoId": "sQpeIw3HFq8"
+        }
+      ]
+    }
+  ]
+}
