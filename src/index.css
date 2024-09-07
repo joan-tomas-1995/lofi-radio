@@ -51,17 +51,35 @@ body {
 
 .app {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
   background-color: var(--background-color);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 35px 80px;
+  padding: 5px 60px 100px;
   margin: 0px 20px;
   width: 60vw;
   max-width: 700px;
   height: 85vh;
+}
+
+.app2 {
+  height: 18vh;
+}
+
+.colappse-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.body-container {
+  position: relative;
+  z-index: 2000000;
 }
 
 .app::before {
@@ -84,6 +102,11 @@ body {
   z-index: 22;
 }
 
+.collapsed {
+  display: none;
+  position: relative;
+  z-index: 23242423;
+}
 
 .top-container button {
   font-size: 16px;
@@ -99,6 +122,53 @@ body {
 
 .slideInner___2mfX9 {
   text-align: center;
+}
+
+.now-playing {
+  z-index: 99999;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  transition: border-color 0.25s;
+}
+
+.playing-text {
+  color: white;
+  padding: .5em;
+}
+
+.circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pulsing-circle {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(191, 0, 0);
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: pulse 2.5s infinite;
+  box-shadow: rgb(191, 0, 0, 0.4) 0px 2px 10px;
+
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 button {
@@ -121,6 +191,7 @@ button {
 }
 
 .player-controls {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,16 +240,26 @@ button {
   z-index: 2;
 }
 
+.background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
 a:hover {
   color: #535bf2;
 }
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  height: 97vh;
   margin: 0;
+  padding-top: 25px;
 
 }
 
@@ -350,7 +431,6 @@ button:focus-visible {
 
   .app {
     width: 60vw;
-    height: 76vh;
     padding: 25px 60px;
   }
 
@@ -368,6 +448,10 @@ button:focus-visible {
   .modal-content {
     width: 85%;
     padding: 10px;
+  }
+
+  .now-playing {
+    width: 120%;
   }
 }
 

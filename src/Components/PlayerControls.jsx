@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useIntl } from 'react-intl';
+
 import {
   CarouselProvider,
   Slider,
@@ -21,6 +23,8 @@ function PlayerControls({
   const [filteredCategories, setFilteredCategories] = useState(categories);
   const [visibleSlides, setVisibleSlides] = useState(3);
   const [stepsCategories, setStepsCategories] = useState(3);
+    const intl = useIntl();
+
   useEffect(() => {
     const updateVisibleSlides = () => {
       const screenWidth = window.innerWidth;
@@ -77,12 +81,12 @@ function PlayerControls({
 
   return (
     <div className="player-controls">
-      <h3 className="title-cat-stat">Categories</h3>
+      <h3 className="title-cat-stat">{intl.formatMessage({ id: 'category' })}</h3>
       <input
         type="text"
         value={searchInput}
         onChange={handleSearchInputChange}
-        placeholder="Search for a category..."
+        placeholder={intl.formatMessage({ id: 'SearchCategory' })}
       />
       {filteredCategories.length > 0 ? (
         <CarouselProvider
@@ -117,7 +121,7 @@ function PlayerControls({
       )}
 
       {/* Stations Display */}
-      <h3 className="title-cat-stat">Stations</h3>
+      <h3 className="title-cat-stat">{intl.formatMessage({ id: 'stations' })}</h3>
 
       {stations.map((station, index) => (
         <button
