@@ -61,11 +61,11 @@ body {
   margin: 0px 20px;
   width: 60vw;
   max-width: 700px;
-  height: 85vh;
+  height: 92vh;
 }
 
 .app2 {
-  height: 18vh;
+  height: 8vh;
 }
 
 .colappse-body {
@@ -94,6 +94,15 @@ body {
 }
 
 .top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  z-index: 22;
+}
+
+.top-container-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,12 +140,12 @@ body {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--background-color-button) !important;
   transition: border-color 0.25s;
 }
 
 .playing-text {
-  color: white;
+  color: var(--text-color);
   padding: .5em;
 }
 
@@ -223,6 +232,13 @@ button {
 
 .p-footer {
   margin: 0;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.kofi-logo {
+  width: 140px;
 }
 
 .active-station {
@@ -232,7 +248,7 @@ button {
 
 .link-footer {
   font-weight: 500;
-  color: var(--a-color);
+  font-size: 12px;
   text-decoration: none !important;
 }
 
@@ -248,16 +264,13 @@ button {
   margin: 20px;
 }
 
-a:hover {
-  color: #535bf2;
-}
 
 body {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  height: 97vh;
+  height: 105vh;
   margin: 0;
   padding-top: 25px;
 
@@ -359,11 +372,37 @@ button {
   align-items: end;
 }
 
+.texto-description {
+  text-align: left;
+  width: 100%;
+}
+
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.show-app-button,
+.hide-app-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.show-app-button {
+  background-color: #1a1a1a !important;
+  top: 5%;
+  right: 5%;
+  transform: translate(50%, -50%);
 }
 
 
@@ -375,6 +414,10 @@ button {
   border-radius: 50%;
   background-color: red;
   animation: heartbeat 5s infinite;
+}
+
+.hidden {
+  display: none;
 }
 
 .selected-category {
@@ -429,9 +472,22 @@ button:focus-visible {
     font-size: 12px;
   }
 
+  .top-container-buttons {
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .top-container-buttons button {
+    font-size: 12px;
+    margin: 4px;
+  }
+
   .app {
     width: 60vw;
-    padding: 25px 60px;
+  }
+
+  .app2 {
+    height: 14vh;
   }
 
   .player-controls {
@@ -453,16 +509,16 @@ button:focus-visible {
   .now-playing {
     width: 120%;
   }
+
+  .kofi-logo {
+    width: 120px;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
   }
 
   button {

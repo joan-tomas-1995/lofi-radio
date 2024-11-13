@@ -22,6 +22,16 @@
           "name": "the bootleg boy 2",
           "picture": "the-bootleg-boy-2.jpg",
           "videoId": "ralJmHG-DII"
+        },
+        {
+          "name": "Afro Lofi",
+          "picture": "afrolofi.jpg",
+          "videoId": "KMXZF-K2mus"
+        },
+        {
+          "name": "Rap Lofi",
+          "picture": "raplofi.jpg",
+          "videoId": "0DztVOeomsk"
         }
       ]
     },
@@ -56,7 +66,7 @@
         {
           "name": "HIP HOP CLASSIC",
           "picture": "hip-hop-classics.jpg",
-          "videoId": "4dOGSFqotvs"
+          "videoId": "D-zIdinmiD8"
         },
         {
           "name": "Best of Mix",
@@ -114,14 +124,14 @@
           "videoId": "UedTcufyrHc"
         },
         {
-          "name": "The Prime Thanatos",
-          "picture": "ThePrimeThanatos.jpg",
-          "videoId": "Th3w-xXHG2M"
+          "name": "Starburst",
+          "picture": "Starburst.jpg",
+          "videoId": "qnStVGoIgBA"
         },
         {
-          "name": "TOKYO TONES",
-          "picture": "TOKYO-TONES.jpg",
-          "videoId": "KNJyQwgzrMg"
+          "name": "The '80s Guy",
+          "picture": "80sGuy.jpg",
+          "videoId": "MGJWPha7rJw"
         }
       ]
     },
@@ -131,7 +141,7 @@
         {
           "name": "Tomorrowland Radio",
           "picture": "Tomorrowland.jpg",
-          "videoId": "wBgSH-CGPzg"
+          "videoId": "ATkRj9XudOA"
         },
         {
           "name": "Toolroom Live",
@@ -139,14 +149,14 @@
           "videoId": "yGlB3GKfNBI"
         },
         {
-          "name": "Deep House Radio",
-          "picture": "depp-house-radio.jpg",
-          "videoId": "UedTcufyrHc"
+          "name": "Defected Records",
+          "picture": "DefectedRecords.jpg",
+          "videoId": "0rmvjfMwnJc"
         },
         {
           "name": "Tropical House Radio",
           "picture": "tropical.jpg",
-          "videoId": "hIf_x11fRxE"
+          "videoId": "WsDyRAPFBC8"
         }
       ]
     },
@@ -154,9 +164,9 @@
       "name": "Meditation",
       "stations": [
         {
-          "name": "YellowBrickCinema",
-          "picture": "YellowBrickCinema.jpg",
-          "videoId": "o2tzU9bpIRk"
+          "name": "Greenred Productions",
+          "picture": "GreenredProductions.jpg",
+          "videoId": "iD6UA5pE4kk"
         },
         {
           "name": "Healing Energy for Soul",
@@ -164,14 +174,14 @@
           "videoId": "u3papaX85MA"
         },
         {
-          "name": "Open Heart Music",
-          "picture": "Open-Heart-Music.jpg",
-          "videoId": "3JllA-gub5Q"
+          "name": "4K Video Nature",
+          "picture": "4KVideoNature.jpg",
+          "videoId": "_bLX5WfDQfM"
         },
         {
-          "name": "OM Chanting 432 Hz",
-          "picture": "OM-Chanting.jpg",
-          "videoId": "gKAnFMu3OQg"
+          "name": "OM CHANT Lord Shiva",
+          "picture": "OMCHANTLordShiva.jpg",
+          "videoId": "85g90mN9D7w"
         }
       ]
     },

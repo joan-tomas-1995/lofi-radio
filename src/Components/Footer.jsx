@@ -4,13 +4,15 @@ const Footer = () => {
   return (
     <div className="container-footer">
       <p className="p-footer">
-        Created by{" "}
         <a
           className="link-footer"
-          href="https://joantomasmiralles.es/"
+          href="https://ko-fi.com/joantomasmiralles"
           target="_blank">
-          {" "}
-          Joan Tomás{" "}
+          <img
+            className="kofi-logo"
+            src="/support_me_on_kofi_blue.png"
+            alt="support me on kofi joan tomas"
+          />
         </a>
       </p>
     </div>
