@@ -136,6 +136,7 @@ function PlayerControls({
             className="station-picture"
             src={station.picture}
             alt={station.name}
+            width={24}
           />
           {station.name}
         </button>
@@ -147,7 +148,8 @@ function PlayerControls({
           <img
             className="previous-button"
             src="previous.svg"
-            alt=""
+            alt="Previous button"
+            width={20}
           />
         </button>
         <button onClick={onTogglePlay}>
@@ -155,6 +157,7 @@ function PlayerControls({
             className={isPlaying ? "pause-button" : "play-button"}
             src={isPlaying ? "pause.svg" : "play.svg"}
             alt={isPlaying ? "Pause" : "Play"}
+            width={20}
           />
         </button>
         <button onClick={() => changeStation("next")}>
@@ -162,7 +165,8 @@ function PlayerControls({
           <img
             className="next-button"
             src="next.svg"
-            alt=""
+            alt="next-button"
+            width={20}
           />{" "}
         </button>
       </div>

@@ -10,8 +10,9 @@ const Footer = () => {
           target="_blank">
           <img
             className="kofi-logo"
-            src="/support_me_on_kofi_blue.png"
+            src="/support_me_on_kofi_blue.webp"
             alt="support me on kofi joan tomas"
+            loading="eager"
           />
         </a>
       </p>

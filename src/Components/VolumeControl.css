@@ -15,7 +15,6 @@
 .off-volume,
 .on-volume {
   filter: invert(100%);
-  width: 16px;
 }
 
 

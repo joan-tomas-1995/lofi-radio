@@ -38,6 +38,7 @@ function VolumeControl({ setVolume }) {
             className={isMuted ? "off-volume" : "on-volume"}
             src={isMuted ? "icon-off.svg" : "icon-on.svg"}
             alt={isMuted ? "Muted" : "Unmuted"}
+            width={16}
           />
         </button>
       </div>
