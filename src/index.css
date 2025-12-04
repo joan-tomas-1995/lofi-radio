@@ -217,14 +217,32 @@ button {
   gap: 10px;
 }
 
+.stations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.station-row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
 .btn-station {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  text-align: center;
+  width: 48%;
+  margin-bottom: 5px;
 }
 
 .station-picture {
+  width: 25px;
   margin-right: 8px;
   border-radius: 50px;
 }

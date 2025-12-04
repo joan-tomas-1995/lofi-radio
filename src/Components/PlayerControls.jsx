@@ -123,24 +123,48 @@ function PlayerControls({
       {/* Stations Display */}
       <h3 className="title-cat-stat">{intl.formatMessage({ id: "stations" })}</h3>
 
-      {stations.map((station, index) => (
-        <button
-          key={index}
-          onClick={() => onStationChange(station)}
-          className={
-            station.videoId === currentStation.videoId
-              ? "btn-station active-station"
-              : "btn-station"
-          }>
-          <img
-            className="station-picture"
-            src={station.picture}
-            alt={station.name}
-            width={24}
-          />
-          {station.name}
-        </button>
-      ))}
+      <div className="stations-container">
+        {stations.map((station, index) => (
+          index % 2 === 0 ? (
+            <div className="station-row" key={index}>
+              <button
+                onClick={() => onStationChange(station)}
+                className={
+                  station.videoId === currentStation.videoId
+                    ? "btn-station active-station"
+                    : "btn-station"
+                }>
+                <img
+                  className="station-picture"
+                  src={station.picture}
+                  alt={station.name}
+                  width={24}
+                />
+                {station.name}
+              </button>
+
+              {/* Check if there is a next station to form the pair */}
+              {stations[index + 1] && (
+                <button
+                  onClick={() => onStationChange(stations[index + 1])}
+                  className={
+                    stations[index + 1].videoId === currentStation.videoId
+                      ? "btn-station active-station"
+                      : "btn-station"
+                  }>
+                  <img
+                    className="station-picture"
+                    src={stations[index + 1].picture}
+                    alt={stations[index + 1].name}
+                    width={24}
+                  />
+                  {stations[index + 1].name}
+                </button>
+              )}
+            </div>
+          ) : null
+        ))}
+      </div>
 
       {/* Play/Pause Button */}
       <div className="pause-play-buttons">
