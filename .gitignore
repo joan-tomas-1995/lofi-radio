@@ -1,3 +1,29 @@
+# Dependencies
+node_modules/
+lofi-radio/node_modules/
+
+# Build outputs
+dist/
+lofi-radio/dist/
+lofi-radio/dist.zip
+
+# Vite cache
+.vite/
+lofi-radio/.vite/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
 # Logs
 logs
 *.log
@@ -7,16 +33,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+# Extra build outputs
 dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "LoFi & more Radio",
+  "version": "1.0.0",
+  "description": "A LoFi & more radio extension for listening music while you navigate through the internet.",
+  "permissions": ["webRequest", "activeTab", "storage", "tabs"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "action": {
+    "default_icon": {
+      "48": "icon-lofi.webp"
+    },
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "48": "icon-lofi.webp"
+  }
+}
