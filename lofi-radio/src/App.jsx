@@ -43,38 +43,6 @@ function App() {
   const isContentRoute =
     location.pathname.startsWith("/blog") || location.pathname.startsWith("/stations/");
 
-  if (isContentRoute) {
-    return (
-      <>
-        <Helmet>
-          <html lang={language} />
-        </Helmet>
-        <SchemaMarkup />
-        <div className="content-layout">
-          <Navbar />
-          <Routes>
-            <Route
-              path="/blog"
-              element={<Blog />}
-            />
-            <Route
-              path="/blog/:slug"
-              element={<BlogPost />}
-            />
-            <Route
-              path="/stations/:category"
-              element={<CategoryPage />}
-            />
-            <Route
-              path="*"
-              element={<NotFound />}
-            />
-          </Routes>
-        </div>
-      </>
-    );
-  }
-
   const canonicalUrl = `${BASE_URL}${location.pathname === "/" ? "/" : location.pathname}`;
   const ogLocale = LOCALE_MAP[language] || "en_US";
   const alternateLocales = Object.entries(LOCALE_MAP)
@@ -181,6 +149,38 @@ function App() {
   const onTogglePlay = () => {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
   };
+
+  if (isContentRoute) {
+    return (
+      <>
+        <Helmet>
+          <html lang={language} />
+        </Helmet>
+        <SchemaMarkup />
+        <div className="content-layout">
+          <Navbar />
+          <Routes>
+            <Route
+              path="/blog"
+              element={<Blog />}
+            />
+            <Route
+              path="/blog/:slug"
+              element={<BlogPost />}
+            />
+            <Route
+              path="/stations/:category"
+              element={<CategoryPage />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+          </Routes>
+        </div>
+      </>
+    );
+  }
 
   if (!currentStation) return <div>{intl.formatMessage({ id: "loadingStations" })}</div>;
 
