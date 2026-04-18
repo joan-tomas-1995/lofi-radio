@@ -17,6 +17,8 @@ import Home from "./pages/Home";
 import Navbar from "./Components/Navbar";
 import Blog from "./pages/Blog";
 import SchemaMarkup from "./Components/SchemaMarkup";
+import BlogPost from "./pages/BlogPost";
+import CategoryPage from "./pages/CategoryPage";
 
 import ModalInfo from "./Components/ModalInfo";
 import { useLanguage } from "./LanguageContext";
@@ -37,6 +39,41 @@ function App() {
   const intl = useIntl();
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
+
+  const isContentRoute =
+    location.pathname.startsWith("/blog") || location.pathname.startsWith("/stations/");
+
+  if (isContentRoute) {
+    return (
+      <>
+        <Helmet>
+          <html lang={language} />
+        </Helmet>
+        <SchemaMarkup />
+        <div className="content-layout">
+          <Navbar />
+          <Routes>
+            <Route
+              path="/blog"
+              element={<Blog />}
+            />
+            <Route
+              path="/blog/:slug"
+              element={<BlogPost />}
+            />
+            <Route
+              path="/stations/:category"
+              element={<CategoryPage />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+          </Routes>
+        </div>
+      </>
+    );
+  }
 
   const canonicalUrl = `${BASE_URL}${location.pathname === "/" ? "/" : location.pathname}`;
   const ogLocale = LOCALE_MAP[language] || "en_US";
@@ -233,10 +270,6 @@ function App() {
             <Route
               path="/"
               element={<Home />}
-            />
-            <Route
-              path="/blog"
-              element={<Blog />}
             />
             <Route
               path="*"
