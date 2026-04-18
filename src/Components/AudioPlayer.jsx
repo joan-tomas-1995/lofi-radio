@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import VolumeControl from "./VolumeControl";
 
-function AudioPlayer({ station, isPlaying, onPlayStateChange }) {
+function AudioPlayer({ station, isPlaying }) {
   const [player, setPlayer] = useState(null);
   const [apiLoaded, setApiLoaded] = useState(false);
 
@@ -14,7 +14,7 @@ function AudioPlayer({ station, isPlaying, onPlayStateChange }) {
       script.onload = () => setApiLoaded(true);
 
       window.onYouTubeIframeAPIReady = () => {
-        const newPlayer = new window.YT.Player("player", {
+        new window.YT.Player("player", {
           height: "0",
           width: "0",
           videoId: station.videoId,

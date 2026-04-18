@@ -7,7 +7,8 @@ const Footer = () => {
         <a
           className="link-footer"
           href="https://ko-fi.com/joantomasmiralles"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           <img
             className="kofi-logo"
             src="/support_me_on_kofi_blue.webp"

@@ -27,3 +27,49 @@ To get this project up and running on your local machine, follow these steps:
 ```bash
 git clone https://github.com/yourusername/lofi-radio-music-app.git
 cd lofi-radio-music-app
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open the app in your browser:
+
+```text
+http://localhost:5173/
+```
+
+## Cloudflare deployment
+
+This project is configured to deploy to Cloudflare using Wrangler.
+
+- Build locally:
+
+```bash
+npm run build
+```
+
+- Validate the Wrangler configuration:
+
+```bash
+npx wrangler deploy --dry-run
+```
+
+- Deploy static assets with the project configuration:
+
+```bash
+npm run cf:deploy
+```
+
+If you prefer the Pages command directly, you can also use:
+
+```bash
+npm run cf:pages:deploy

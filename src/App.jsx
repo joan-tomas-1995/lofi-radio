@@ -11,6 +11,11 @@ import { FaInfoCircle, FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { BsFullscreen, BsFullscreenExit } from "react-icons/bs";
 import { MdCloseFullscreen } from "react-icons/md";
 import { IoMdOpen } from "react-icons/io";
+import { Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Navbar from "./Components/Navbar";
+import Blog from "./pages/Blog";
 
 import ModalInfo from "./Components/ModalInfo";
 import { useLanguage } from "./LanguageContext";
@@ -19,11 +24,21 @@ function App() {
   const intl = useIntl();
   const { language, setLanguage } = useLanguage();
 
+  const safeJSONParse = (rawValue, fallbackValue) => {
+    if (!rawValue) return fallbackValue;
+
+    try {
+      return JSON.parse(rawValue);
+    } catch (error) {
+      console.warn("Valor inválido en localStorage, usando fallback", error);
+      return fallbackValue;
+    }
+  };
+
   const [categories, setCategories] = useState([]);
   const [currentStation, setCurrentStation] = useState(null);
   const [selectedCategoryName, setSelectedCategoryName] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
-  const [favorites, setFavorites] = useState([]);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -46,9 +61,6 @@ function App() {
     }
   };
 
-  const [background, setBackground] = useState(
-    localStorage.getItem("background") || "defaultBackground"
-  );
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleTheme = () => {
@@ -62,40 +74,45 @@ function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem("background", background);
-  }, [background]);
-
-  useEffect(() => {
     const storedTheme = localStorage.getItem("theme") || "light";
     setTheme(storedTheme);
   }, []);
 
   useEffect(() => {
-    fetch("/stations.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setCategories(data.categories);
-        if (data.categories.length > 0) {
-          setSelectedCategoryName(data.categories[0].name);
-          if (data.categories[0].stations.length > 0) {
-            setCurrentStation(data.categories[0].stations[0]);
+    const loadStations = async () => {
+      try {
+        const response = await fetch("/stations.json");
+        const contentType = response.headers.get("content-type") || "";
+
+        if (!response.ok || !contentType.includes("application/json")) {
+          throw new Error(`No se pudo cargar stations.json (${response.status})`);
+        }
+
+        const data = await response.json();
+        const loadedCategories = Array.isArray(data.categories) ? data.categories : [];
+
+        setCategories(loadedCategories);
+        if (loadedCategories.length > 0) {
+          setSelectedCategoryName(loadedCategories[0].name);
+          if (loadedCategories[0].stations.length > 0) {
+            setCurrentStation(loadedCategories[0].stations[0]);
             setIsPlaying(true);
           }
         }
-      });
+      } catch (error) {
+        console.error("Error cargando estaciones", error);
+      }
+    };
+
+    loadStations();
   }, []);
 
   useEffect(() => {
-    const lastStation = JSON.parse(localStorage.getItem("lastStation"));
+    const lastStation = safeJSONParse(localStorage.getItem("lastStation"), null);
     if (lastStation) {
       setCurrentStation(lastStation);
       setIsPlaying(true);
     }
-  }, []);
-
-  useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(savedFavorites);
   }, []);
 
   const handleStationChange = (newStation) => {
@@ -106,28 +123,6 @@ function App() {
 
   const onTogglePlay = () => {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
-  };
-
-  const toggleFavorite = (station) => {
-    let updatedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
-    const category = station.category;
-
-    if (!updatedFavorites[category]) updatedFavorites[category] = [];
-
-    if (updatedFavorites[category].some((fav) => fav.videoId === station.videoId)) {
-      updatedFavorites[category] = updatedFavorites[category].filter(
-        (fav) => fav.videoId !== station.videoId
-      );
-    } else {
-      updatedFavorites[category].push(station);
-    }
-
-    if (updatedFavorites[category].length === 0) {
-      delete updatedFavorites[category];
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    setFavorites(updatedFavorites);
   };
 
   if (!currentStation) return <div>{intl.formatMessage({ id: "loadingStations" })}</div>;
@@ -181,6 +176,21 @@ function App() {
         }`}
         data-theme={theme}>
         <header className="top-container">
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/blog"
+              element={<Blog />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+          </Routes>
           <h1 className="main-title">{intl.formatMessage({ id: "mainTitle" })}</h1>
           <select
             value={language}
@@ -188,6 +198,7 @@ function App() {
             className="selector-bg-img">
             <option value="es">Español</option>
             <option value="en">English</option>
+            <option value="de">Deutsch</option>
             <option value="fr">Français</option>
             <option value="it">Italiano</option>
             <option value="ru">Русский</option>
