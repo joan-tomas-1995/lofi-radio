@@ -6,12 +6,6 @@ function Navbar() {
     <nav aria-label="Main navigation">
       <ul>
         <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
           <Link to="/stations/lofi">Lofi</Link>
         </li>
         <li>
