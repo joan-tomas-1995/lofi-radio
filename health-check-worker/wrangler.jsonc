@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lofi-health-check",
+  "main": "src/index.js",
+  "compatibility_date": "2026-04-18",
+  "triggers": {
+    "crons": ["0 */12 * * *"]
+  }
+}
