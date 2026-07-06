@@ -76,9 +76,7 @@ body {
   margin: 0px 20px;
   width: 60vw;
   max-width: 700px;
-  height: 92vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  height: 80vh;
 }
 
 .app2 {
