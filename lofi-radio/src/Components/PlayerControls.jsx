@@ -1,14 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useIntl } from "react-intl";
-
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
 
 function PlayerControls({
   onTogglePlay,
@@ -21,22 +12,8 @@ function PlayerControls({
 }) {
   const [searchInput, setSearchInput] = useState("");
   const [filteredCategories, setFilteredCategories] = useState(categories);
-  const [visibleSlides, setVisibleSlides] = useState(3);
-  const [stepsCategories, setStepsCategories] = useState(3);
+  const scrollRef = useRef(null);
   const intl = useIntl();
-
-  useEffect(() => {
-    const updateVisibleSlides = () => {
-      const screenWidth = window.innerWidth;
-      setVisibleSlides(screenWidth < 768 ? 2 : 3);
-      setStepsCategories(screenWidth < 768 ? 2 : 3);
-    };
-
-    updateVisibleSlides();
-    window.addEventListener("resize", updateVisibleSlides);
-
-    return () => window.removeEventListener("resize", updateVisibleSlides); // Cleanup on unmount
-  }, []);
 
   const stations =
     categories.find((category) => category.name === selectedCategoryName)?.stations || [];
@@ -79,6 +56,17 @@ function PlayerControls({
     onStationChange(stations[nextIndex]);
   };
 
+  // Scroll the category container
+  const scrollCategories = (direction) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollAmount = el.offsetWidth * 0.6;
+    el.scrollBy({
+      left: direction === "next" ? scrollAmount : -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="player-controls">
       <h3 className="title-cat-stat">{intl.formatMessage({ id: "category" })}</h3>
@@ -89,33 +77,36 @@ function PlayerControls({
         placeholder={intl.formatMessage({ id: "SearchCategory" })}
       />
       {filteredCategories.length > 0 ? (
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={125}
-          totalSlides={filteredCategories.length}
-          visibleSlides={visibleSlides}
-          infinite={true}
-          step={stepsCategories}
-          className="carousel-container">
-          <ButtonBack className="button-back">{"<"}</ButtonBack>
-          <Slider>
-            {filteredCategories.map((category, index) => (
-              <Slide
-                className="my-slide"
-                index={index}
-                key={index}>
-                <button
-                  onClick={() => handleSelectCategory(category.name)}
-                  className={
-                    category.name === selectedCategoryName ? "selected-category" : ""
-                  }>
-                  {category.name}
-                </button>
-              </Slide>
+        <div className="carousel-native">
+          <button
+            className="button-back"
+            onClick={() => scrollCategories("prev")}
+            aria-label="Previous categories">
+            {"<"}
+          </button>
+          <div
+            className="carousel-scroll"
+            ref={scrollRef}>
+            {filteredCategories.map((category) => (
+              <button
+                key={category.name}
+                onClick={() => handleSelectCategory(category.name)}
+                className={
+                  category.name === selectedCategoryName
+                    ? "carousel-item selected-category"
+                    : "carousel-item"
+                }>
+                {category.name}
+              </button>
             ))}
-          </Slider>
-          <ButtonNext className="button-next">{">"}</ButtonNext>
-        </CarouselProvider>
+          </div>
+          <button
+            className="button-next"
+            onClick={() => scrollCategories("next")}
+            aria-label="Next categories">
+            {">"}
+          </button>
+        </div>
       ) : (
         <div className="no-results">No results found.</div>
       )}

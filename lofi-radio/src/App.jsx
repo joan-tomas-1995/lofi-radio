@@ -15,9 +15,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Navbar from "./Components/Navbar";
-import Blog from "./pages/Blog";
 import SchemaMarkup from "./Components/SchemaMarkup";
-import BlogPost from "./pages/BlogPost";
 import CategoryPage from "./pages/CategoryPage";
 
 import ModalInfo from "./Components/ModalInfo";
@@ -40,8 +38,7 @@ function App() {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
-  const isContentRoute =
-    location.pathname.startsWith("/blog") || location.pathname.startsWith("/stations/");
+  const isContentRoute = location.pathname.startsWith("/stations/");
 
   const canonicalUrl = `${BASE_URL}${location.pathname === "/" ? "/" : location.pathname}`;
   const ogLocale = LOCALE_MAP[language] || "en_US";
@@ -155,19 +152,28 @@ function App() {
       <>
         <Helmet>
           <html lang={language} />
+          <link
+            rel="canonical"
+            href={canonicalUrl}
+          />
+          {Object.entries(LOCALE_MAP).map(([lang, hreflang]) => (
+            <link
+              key={lang}
+              rel="alternate"
+              hrefLang={hreflang.replace("_", "-")}
+              href={`${BASE_URL}${location.pathname}?lang=${lang}`}
+            />
+          ))}
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href={`${BASE_URL}${location.pathname}?lang=en`}
+          />
         </Helmet>
         <SchemaMarkup />
         <div className="content-layout">
           <Navbar />
           <Routes>
-            <Route
-              path="/blog"
-              element={<Blog />}
-            />
-            <Route
-              path="/blog/:slug"
-              element={<BlogPost />}
-            />
             <Route
               path="/stations/:category"
               element={<CategoryPage />}
@@ -201,6 +207,19 @@ function App() {
           rel="canonical"
           href={canonicalUrl}
         />
+        {Object.entries(LOCALE_MAP).map(([lang, hreflang]) => (
+          <link
+            key={lang}
+            rel="alternate"
+            hrefLang={hreflang.replace("_", "-")}
+            href={`${BASE_URL}${location.pathname === "/" ? "/" : location.pathname}?lang=${lang}`}
+          />
+        ))}
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${BASE_URL}${location.pathname === "/" ? "/" : location.pathname}?lang=en`}
+        />
         <meta
           property="og:title"
           content={intl.formatMessage({ id: "ogTitle" })}
@@ -230,19 +249,19 @@ function App() {
         ))}
         <meta
           property="og:image"
-          content={`${BASE_URL}/lofi-radio-logo-blue.webp`}
+          content={`${BASE_URL}/og/home.png`}
         />
         <meta
           property="og:image:width"
-          content="512"
+          content="1200"
         />
         <meta
           property="og:image:height"
-          content="512"
+          content="630"
         />
         <meta
           name="twitter:card"
-          content="summary"
+          content="summary_large_image"
         />
         <meta
           name="twitter:title"
@@ -254,7 +273,7 @@ function App() {
         />
         <meta
           name="twitter:image"
-          content={`${BASE_URL}/lofi-radio-logo-blue.webp`}
+          content={`${BASE_URL}/og/home.png`}
         />
       </Helmet>
       <SchemaMarkup />

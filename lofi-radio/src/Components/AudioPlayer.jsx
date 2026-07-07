@@ -1,54 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import VolumeControl from "./VolumeControl";
 
 function AudioPlayer({ station, isPlaying }) {
   const [player, setPlayer] = useState(null);
-  const [apiLoaded, setApiLoaded] = useState(false);
+  const [ytReady, setYtReady] = useState(false);
+  const playerRef = useRef(null);
 
+  // Load YouTube IFrame API script on mount
   useEffect(() => {
-    if (!apiLoaded) {
-      const script = document.createElement("script");
-      script.src = "https://www.youtube.com/iframe_api";
-      script.async = true;
-      document.body.appendChild(script);
-      script.onload = () => setApiLoaded(true);
-
-      window.onYouTubeIframeAPIReady = () => {
-        new window.YT.Player("player", {
-          height: "0",
-          width: "0",
-          videoId: station.videoId,
-          playerVars: {
-            autoplay: isPlaying ? 1 : 0,
-          },
-          events: {
-            onReady: (event) => setPlayer(event.target),
-          },
-        });
-      };
+    if (window.YT?.Player) {
+      setYtReady(true);
+      return;
     }
-  }, [apiLoaded, station, isPlaying]);
 
+    window.onYouTubeIframeAPIReady = () => setYtReady(true);
+
+    const script = document.createElement("script");
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  // Create player when YT API is ready (auto-play on load)
   useEffect(() => {
-    if (player) {
-      if (isPlaying && player.getPlayerState() !== window.YT.PlayerState.PLAYING) {
+    if (!ytReady || playerRef.current || !station) return;
+
+    playerRef.current = new window.YT.Player("player", {
+      height: "0",
+      width: "0",
+      videoId: station.videoId,
+      playerVars: { autoplay: 1 },
+      events: {
+        onReady: (event) => setPlayer(event.target),
+      },
+    });
+  }, [ytReady, station.videoId]);
+
+  // Handle play/pause
+  useEffect(() => {
+    if (!player) return;
+    if (isPlaying) {
+      if (player.getPlayerState() !== window.YT.PlayerState.PLAYING) {
         player.playVideo();
-      } else if (!isPlaying && player.getPlayerState() !== window.YT.PlayerState.PAUSED) {
+      }
+    } else {
+      if (player.getPlayerState() === window.YT.PlayerState.PLAYING) {
         player.pauseVideo();
       }
     }
   }, [player, isPlaying]);
 
+  // Handle station change
   useEffect(() => {
     if (player) {
       player.loadVideoById(station.videoId);
     }
-  }, [player, station]);
+  }, [player, station.videoId]);
 
   const setVolume = (volume) => {
-    if (player) {
-      player.setVolume(volume);
-    }
+    if (player) player.setVolume(volume);
   };
 
   return (

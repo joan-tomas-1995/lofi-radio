@@ -1,105 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://lofimusicradio.com/</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog/best-lofi-music-stations-for-studying-2025</loc>
-        <lastmod>2025-04-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog/what-is-lofi-hip-hop</loc>
-        <lastmod>2025-04-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog/lofi-vs-ambient-music-for-focus</loc>
-        <lastmod>2025-03-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog/lofi-music-productivity-science</loc>
-        <lastmod>2025-03-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/blog/best-free-online-radio-stations</loc>
-        <lastmod>2025-03-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/lofi</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/jazz</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/rap-hip-hop</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/nature</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/synthwave</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/house</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/meditation</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/drum-bass</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/techno</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://lofimusicradio.com/stations/reggaeton</loc>
-        <lastmod>2026-04-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://lofimusicradio.com/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/lofi</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/lofi?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/lofi?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/lofi?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/lofi?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/lofi?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/lofi?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/lofi?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/lofi?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/jazz</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/jazz?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/jazz?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/jazz?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/jazz?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/jazz?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/jazz?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/jazz?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/jazz?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/rap-hip-hop</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/rap-hip-hop?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/nature</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/nature?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/nature?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/nature?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/nature?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/nature?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/nature?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/nature?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/nature?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/synthwave</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/synthwave?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/synthwave?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/synthwave?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/synthwave?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/synthwave?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/synthwave?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/synthwave?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/synthwave?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/house</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/house?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/house?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/house?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/house?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/house?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/house?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/house?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/house?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/meditation</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/meditation?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/meditation?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/meditation?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/meditation?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/meditation?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/meditation?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/meditation?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/meditation?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/drum-bass</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/drum-bass?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/drum-bass?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/drum-bass?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/drum-bass?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/drum-bass?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/drum-bass?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/drum-bass?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/drum-bass?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/techno</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/techno?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/techno?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/techno?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/techno?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/techno?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/techno?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/techno?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/techno?lang=en" />
+  </url>
+  <url>
+    <loc>https://lofimusicradio.com/stations/reggaeton</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lofimusicradio.com/stations/reggaeton?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://lofimusicradio.com/stations/reggaeton?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://lofimusicradio.com/stations/reggaeton?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://lofimusicradio.com/stations/reggaeton?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://lofimusicradio.com/stations/reggaeton?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://lofimusicradio.com/stations/reggaeton?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lofimusicradio.com/stations/reggaeton?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lofimusicradio.com/stations/reggaeton?lang=en" />
+  </url>
 </urlset>

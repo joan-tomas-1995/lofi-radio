@@ -241,7 +241,23 @@ function CategoryPage() {
         />
         <meta
           property="og:image"
-          content={`${BASE_URL}/lofi-radio-logo-blue.webp`}
+          content={`${BASE_URL}/og/stations-${category}.png`}
+        />
+        <meta
+          property="og:image:width"
+          content="1200"
+        />
+        <meta
+          property="og:image:height"
+          content="630"
+        />
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          name="twitter:image"
+          content={`${BASE_URL}/og/stations-${category}.png`}
         />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

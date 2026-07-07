@@ -48,6 +48,7 @@
 html,
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-display: swap;
   line-height: 1.1;
   font-weight: 400;
   color-scheme: light dark;
@@ -329,50 +330,84 @@ button {
   margin: 4px;
 }
 
-.carousel-container {
-  position: relative;
+/* ─── Native CSS scroll-snap carousel ─── */
+.carousel-native {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   width: 100%;
-
-}
-
-
-.stations-carousel-container {
   position: relative;
-  width: 100%;
 }
 
-.button-back {
-  left: -50px;
-  top: 20px;
+.carousel-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Firefox */
+  flex: 1;
+  padding: 4px 0;
 }
 
-.button-next {
-  right: -50px;
-  top: 20px;
+.carousel-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  min-width: 90px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  white-space: nowrap;
+  text-align: center;
+  background-color: var(--background-color-button);
+  color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    min-width: 100px;
+  }
+}
+
+.selected-category {
+  border-color: #646cff;
+  box-shadow: 0 2px 12px rgba(100, 108, 255, 0.3);
 }
 
 .button-back,
 .button-next {
-  position: absolute;
-  transform: translateY(-50%);
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color-button);
+  color: var(--text-color);
+  transition: background 0.2s;
 }
 
-.slideHorizontal___1NzNV {
-  float: left;
-  padding-bottom: 70px !important;
-}
-
-
-.my-slide>div>button {
-  width: 90%;
-  padding: 10px !important;
-}
-
-.button-back,
-.button-next {
-  z-index: 1;
+.button-back:hover,
+.button-next:hover {
+  background-color: #646cff;
+  color: #fff;
 }
 
 .title-cat-stat {
