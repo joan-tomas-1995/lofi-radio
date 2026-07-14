@@ -8,7 +8,6 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { Resvg } from "@resvg/resvg-js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -17,6 +16,17 @@ const OG_DIR = join(ROOT, "public", "og");
 const BRAND = "Lofi Music Radio";
 const W = 1200;
 const H = 630;
+const PLACEHOLDER_PNG = Buffer.from(
+  "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQABAA0i0PNmAAAAAElFTkSuQmCC",
+  "base64"
+);
+
+let Resvg;
+try {
+  ({ Resvg } = await import("@resvg/resvg-js"));
+} catch (error) {
+  console.warn("⚠️ @resvg/resvg-js native binary unavailable; using placeholder PNGs for OG images.");
+}
 
 function esc(str) {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -70,19 +80,26 @@ function ogSvg({ title, subtitle, tag }) {
 </svg>`;
 }
 
-function generateOg(filename, title, subtitle, tag) {
+async function generateOg(filename, title, subtitle, tag) {
   const svg = ogSvg({ title, subtitle, tag });
+
+  if (!Resvg) {
+    writeFileSync(join(OG_DIR, filename), PLACEHOLDER_PNG);
+    console.log(`  ⚪ ${filename} (placeholder)`);
+    return;
+  }
+
   const resvg = new Resvg(svg, { fitTo: { mode: "width", value: W } });
   writeFileSync(join(OG_DIR, filename), resvg.render().asPng());
   console.log(`  ✅ ${filename}`);
 }
 
-function main() {
+async function main() {
   if (!existsSync(OG_DIR)) mkdirSync(OG_DIR, { recursive: true });
   console.log("🎨 Generating OG images (SVG → PNG)...\n");
 
   // Homepage
-  generateOg("home.png", "Free Lofi Music — 24/7 Radio", "Ad-free lofi hip hop, jazz, ambient & more. No interruptions, just music.", "Radio");
+  await generateOg("home.png", "Free Lofi Music — 24/7 Radio", "Ad-free lofi hip hop, jazz, ambient & more. No interruptions, just music.", "Radio");
 
   // Categories
   let categories = [];
@@ -111,10 +128,10 @@ function main() {
   for (const cat of categories) {
     const slug = slugs[cat.name] || cat.name.toLowerCase().replace(/\//g, "-").replace(/\s+/g, "-").replace(/&/g, "");
     const desc = descs[slug] || `Listen to ${cat.name} music 24/7, ad-free.`;
-    generateOg(`stations-${slug}.png`, `${cat.name} Radio — 24/7 Free Online`, desc, `${cat.stations.length} stations · ${cat.name}`);
+    await generateOg(`stations-${slug}.png`, `${cat.name} Radio — 24/7 Free Online`, desc, `${cat.stations.length} stations · ${cat.name}`);
   }
 
   console.log(`\n🎉 Done! ${1 + categories.length} OG images → public/og/`);
 }
 
-main();
+await main();
