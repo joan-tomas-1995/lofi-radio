@@ -34,7 +34,7 @@ function AudioPlayer({ station, isPlaying }) {
         onReady: (event) => setPlayer(event.target),
       },
     });
-  }, [ytReady, station.videoId]);
+  }, [ytReady, station]);
 
   // Handle play/pause
   useEffect(() => {
@@ -55,7 +55,7 @@ function AudioPlayer({ station, isPlaying }) {
     if (player) {
       player.loadVideoById(station.videoId);
     }
-  }, [player, station.videoId]);
+  }, [player, station]);
 
   const setVolume = (volume) => {
     if (player) player.setVolume(volume);

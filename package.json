@@ -1,0 +1,11 @@
+{
+  "name": "lofi-radio-monorepo",
+  "private": true,
+  "workspaces": [
+    "lofi-radio"
+  ],
+  "scripts": {
+    "build": "npm --prefix lofi-radio run build",
+    "lint": "npm --prefix lofi-radio run lint"
+  }
+}
