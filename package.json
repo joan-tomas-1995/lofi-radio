@@ -6,6 +6,10 @@
   ],
   "scripts": {
     "build": "npm --prefix lofi-radio run build",
-    "lint": "npm --prefix lofi-radio run lint"
+    "lint": "npm --prefix lofi-radio run lint",
+    "deploy": "cd lofi-radio && npx wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.83.0"
   }
 }
