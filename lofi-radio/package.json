@@ -11,8 +11,8 @@
     "og-images": "node scripts/generate-og-images.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "cf:deploy": "wrangler deploy",
-    "cf:pages:deploy": "wrangler pages deploy dist"
+    "cf:deploy": "npx wrangler deploy",
+    "cf:pages:deploy": "npx wrangler pages deploy dist"
   },
   "dependencies": {
     "react": "^18.2.0",
